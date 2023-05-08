@@ -44,7 +44,7 @@ class Room{
 }
 
 class Hotel{
-    rooms = new Array.Room();
+    rooms = [];
     #min_floor;
     #max_floor;
     constructor(address, Number_Of_Rooms, min_floor, max_floor, room){
@@ -52,7 +52,7 @@ class Hotel{
         this.Number_Of_Rooms = Number_Of_Rooms;
         this.#min_floor = min_floor;
         this.#max_floor = max_floor;
-        this.rooms.append(room) ;
+        this.rooms.push(room) ;
     }
 
     set minimum_Of_floors(min){
@@ -79,3 +79,24 @@ class Hotel{
         return this.rooms.filter(room => room.available == true);
     }
 }
+
+class RoomWithView extends Room{
+    constructor(view, num_of_beds){
+        this.view = view;
+        this.num_of_beds = num_of_beds ;
+    }
+}
+
+class SleepingRoom extends Room{
+    constructor(person_capacity){
+        this.person_capacity = person_capacity;
+    }
+}
+
+
+let hotel1 = new Hotel();
+hotel1.minimum_Of_floors =4;
+hotel1.Number_Of_Rooms = 226;
+let room1 = new Room(1,26,300, true)
+hotel1.rooms = [room1]
+console.log(hotel1.rooms)
