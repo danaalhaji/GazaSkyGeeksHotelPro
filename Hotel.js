@@ -97,6 +97,9 @@ class SleepingRoom extends Room{
 let hotel1 = new Hotel();
 hotel1.minimum_Of_floors =4;
 hotel1.Number_Of_Rooms = 226;
-let room1 = new Room(1,26,300, true)
-hotel1.rooms = [room1]
-console.log(hotel1.rooms)
+let room1 = new Room(1,26,300, true);
+let room2 = new Room(1,200,300,false);
+room2.available = true ;
+console.log( room2.checkAvalability());
+hotel1.rooms = [room1, room2];
+console.log(hotel1.rooms);
